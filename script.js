@@ -194,6 +194,7 @@ function loadTrack(index, autoplay = false) {
   renderPlaylist();
 
   if (autoplay) {
+    resumeAudioCtx();
     audio.play().then(() => {
       isPlaying = true;
       updatePlayButton();
@@ -219,6 +220,7 @@ playBtn.addEventListener('click', () => {
     cover.classList.remove('playing');
     statusText.textContent = 'Pausado';
   } else {
+    resumeAudioCtx();
     isPlaying = true;
     updatePlayButton();
     const p = audio.play();
@@ -282,7 +284,13 @@ progressBar.addEventListener('click', (e) => {
 });
 
 volumeEl.addEventListener('input', () => {
-  audio.volume = parseFloat(volumeEl.value);
+  const vol = parseFloat(volumeEl.value);
+  if (gainNode) {
+    const boost = parseFloat(boostEl.value) || 1;
+    gainNode.gain.value = vol * boost;
+  } else {
+    audio.volume = vol;
+  }
 });
 
 boostEl.addEventListener('input', () => {
@@ -341,6 +349,7 @@ vignetteGrid.addEventListener('click', (e) => {
   const wasPlaying = isPlaying;
   const prevSrc = audio.src;
   const prevIndex = currentIndex;
+  resumeAudioCtx();
   audio.src = v.src;
   trackTitle.textContent = v.title;
   trackArtist.textContent = 'Vinheta da Rádio';
@@ -452,11 +461,11 @@ refreshDiag.addEventListener('click', updateDiag);
 setInterval(updateDiag, 2000);
 
 // ---------- Init ----------
-// Web Audio API DESABILITADO temporariamente para diagnóstico
-// setupAudioBoost();
-// if (audioBoostReady) {
-//   audio.volume = 1;
-// }
+// Web Audio API habilitado para boost de volume
+setupAudioBoost();
+if (audioBoostReady) {
+  audio.volume = 1;
+}
 renderPlaylist();
 renderVignettes();
 loadTrack(0);
