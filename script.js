@@ -194,8 +194,6 @@ function loadTrack(index, autoplay = false) {
   renderPlaylist();
 
   if (autoplay) {
-    // Retoma o AudioContext se necessário
-    resumeAudioCtx();
     audio.play().then(() => {
       isPlaying = true;
       updatePlayButton();
@@ -221,8 +219,6 @@ playBtn.addEventListener('click', () => {
     cover.classList.remove('playing');
     statusText.textContent = 'Pausado';
   } else {
-    // Retoma o AudioContext (necessário após interação do usuário)
-    resumeAudioCtx();
     isPlaying = true;
     updatePlayButton();
     const p = audio.play();
@@ -286,15 +282,7 @@ progressBar.addEventListener('click', (e) => {
 });
 
 volumeEl.addEventListener('input', () => {
-  const vol = parseFloat(volumeEl.value);
-  if (gainNode) {
-    // Quando Web Audio API está ativo, o volume é controlado pelo gain node
-    // Mantém o boost multiplicando o volume
-    const boost = parseFloat(boostEl.value) || 1;
-    gainNode.gain.value = vol * boost;
-  } else {
-    audio.volume = vol;
-  }
+  audio.volume = parseFloat(volumeEl.value);
 });
 
 boostEl.addEventListener('input', () => {
@@ -353,8 +341,6 @@ vignetteGrid.addEventListener('click', (e) => {
   const wasPlaying = isPlaying;
   const prevSrc = audio.src;
   const prevIndex = currentIndex;
-  // Retoma o AudioContext se necessário
-  resumeAudioCtx();
   audio.src = v.src;
   trackTitle.textContent = v.title;
   trackArtist.textContent = 'Vinheta da Rádio';
@@ -466,13 +452,11 @@ refreshDiag.addEventListener('click', updateDiag);
 setInterval(updateDiag, 2000);
 
 // ---------- Init ----------
-// Configura o Web Audio API ANTES de carregar qualquer áudio
-setupAudioBoost();
-// Quando Web Audio está ativo, o volume do elemento é fixo em 1 (max)
-// e o gain node controla o volume real
-if (audioBoostReady) {
-  audio.volume = 1;
-}
+// Web Audio API DESABILITADO temporariamente para diagnóstico
+// setupAudioBoost();
+// if (audioBoostReady) {
+//   audio.volume = 1;
+// }
 renderPlaylist();
 renderVignettes();
 loadTrack(0);
