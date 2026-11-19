@@ -1,0 +1,26 @@
+{
+  "name": "Rádio Vida Nova",
+  "short_name": "Rádio Vida Nova",
+  "description": "Web Rádio Evangélica - Louvores, pregações e palavras de fé 24 horas por dia",
+  "start_url": "/radio-evangelica/",
+  "display": "standalone",
+  "background_color": "#0b1020",
+  "theme_color": "#f5c542",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["music", "entertainment", "lifestyle"],
+  "lang": "pt-BR"
+}

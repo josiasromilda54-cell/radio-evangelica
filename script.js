@@ -453,3 +453,57 @@ updateListeners();
 loadPrayers();
 updateDiag();
 statusText.textContent = `Pronto! ${LIBRARY.length} louvores + ${VIGNETTES.length} vinhetas. Clique em ▶ para ouvir.`;
+
+// ---------- PWA: Service Worker ----------
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').then((registration) => {
+      console.log('Service Worker registrado:', registration.scope);
+    }).catch((error) => {
+      console.log('Service Worker falhou:', error);
+    });
+  });
+}
+
+// ---------- PWA: Install Prompt ----------
+let deferredPrompt = null;
+const installBanner = document.getElementById('installBanner');
+const installBtn = document.getElementById('installBtn');
+const dismissInstall = document.getElementById('dismissInstall');
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  if (installBanner) {
+    installBanner.style.display = 'flex';
+  }
+});
+
+if (installBtn) {
+  installBtn.addEventListener('click', async () => {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      console.log('Instalação:', outcome);
+      deferredPrompt = null;
+      if (installBanner) {
+        installBanner.style.display = 'none';
+      }
+    }
+  });
+}
+
+if (dismissInstall) {
+  dismissInstall.addEventListener('click', () => {
+    if (installBanner) {
+      installBanner.style.display = 'none';
+    }
+  });
+}
+
+window.addEventListener('appinstalled', () => {
+  console.log('PWA instalado com sucesso!');
+  if (installBanner) {
+    installBanner.style.display = 'none';
+  }
+});

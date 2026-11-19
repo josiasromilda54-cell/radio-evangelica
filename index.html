@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rádio Vida Nova — Web Rádio Evangélica</title>
   <meta name="description" content="Rádio Vida Nova — Sertanejo gospel, MPB gospel, clássicos e orquestrados. 24 horas no ar." />
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#f5c542" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Rádio Vida Nova" />
+  <link rel="apple-touch-icon" href="icon-192.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -12,6 +19,19 @@
 </head>
 <body>
   <div class="bg-glow"></div>
+
+  <!-- Banner de instalação PWA -->
+  <div class="install-banner" id="installBanner" style="display:none;">
+    <div class="install-content">
+      <span>📱</span>
+      <div>
+        <strong>Instalar Rádio Vida Nova</strong>
+        <span>Adicione à tela inicial para acessar como app</span>
+      </div>
+    </div>
+    <button id="installBtn" class="install-btn">Instalar</button>
+    <button id="dismissInstall" class="close-banner">✕</button>
+  </div>
 
   <header class="topbar">
     <div class="brand">
