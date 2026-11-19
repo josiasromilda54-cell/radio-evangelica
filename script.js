@@ -438,6 +438,15 @@ function playTestBeep() {
 
 testSoundBtn.addEventListener('click', playTestBeep);
 
+// Fechar banner de diagnóstico
+const closeBanner = document.getElementById('closeBanner');
+const diagBanner = document.getElementById('diagBanner');
+if (closeBanner && diagBanner) {
+  closeBanner.addEventListener('click', () => {
+    diagBanner.style.display = 'none';
+  });
+}
+
 // ---------- Diagnóstico de Áudio ----------
 function updateDiag() {
   const a = audio;
