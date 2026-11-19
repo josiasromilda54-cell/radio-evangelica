@@ -98,37 +98,11 @@ let currentIndex = 0;
 let isPlaying = false;
 let currentFilter = 'all';
 
-// ---------- Web Audio API (volume boost) ----------
-let audioCtx = null;
-let gainNode = null;
-let sourceNode = null;
-let audioBoostReady = false;
-
-function setupAudioBoost() {
-  if (audioBoostReady) return; // já inicializado
-  try {
-    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    // Criar o source node ANTES de qualquer áudio ser carregado
-    sourceNode = audioCtx.createMediaElementSource(audio);
-    gainNode = audioCtx.createGain();
-    const initVol = parseFloat(volumeEl.value) || 1;
-    const initBoost = parseFloat(boostEl.value) || 1;
-    gainNode.gain.value = initVol * initBoost;
-    sourceNode.connect(gainNode);
-    gainNode.connect(audioCtx.destination);
-    audioBoostReady = true;
-  } catch (e) {
-    console.warn('Web Audio API não disponível:', e);
-    audioCtx = null;
-    audioBoostReady = false;
-  }
-}
-
-function resumeAudioCtx() {
-  if (audioCtx && audioCtx.state === 'suspended') {
-    audioCtx.resume().catch(e => console.warn(e));
-  }
-}
+// ---------- Web Audio API (apenas para teste de som - beep) ----------
+// NOTA: NÃO usamos MediaElementAudioSourceNode no elemento de áudio principal,
+// pois isso redireciona o áudio para o grafo Web Audio e pode causar
+// silêncio em alguns navegadores/dispositivos.
+// O volume é controlado nativamente pelo elemento <audio>.
 
 // ---------- Helpers ----------
 function formatTime(s) {
@@ -194,11 +168,7 @@ function loadTrack(index, autoplay = false) {
   renderPlaylist();
 
   if (autoplay) {
-    setupAudioBoost();
-    if (audioBoostReady) {
-      audio.volume = 1;
-    }
-    resumeAudioCtx();
+    audio.volume = parseFloat(volumeEl.value) || 1;
     audio.play().then(() => {
       isPlaying = true;
       updatePlayButton();
@@ -225,14 +195,7 @@ playBtn.addEventListener('click', () => {
     statusText.textContent = 'Pausado';
   } else {
     // Configura Web Audio API na primeira interação (necessário para mobile)
-    setupAudioBoost();
-    if (audioBoostReady) {
-      audio.volume = 1;
-      const vol = parseFloat(volumeEl.value) || 1;
-      const boost = parseFloat(boostEl.value) || 1;
-      gainNode.gain.value = vol * boost;
-    }
-    resumeAudioCtx();
+    audio.volume = parseFloat(volumeEl.value) || 1;
     isPlaying = true;
     updatePlayButton();
     const p = audio.play();
@@ -296,22 +259,16 @@ progressBar.addEventListener('click', (e) => {
 });
 
 volumeEl.addEventListener('input', () => {
-  const vol = parseFloat(volumeEl.value);
-  if (gainNode) {
-    const boost = parseFloat(boostEl.value) || 1;
-    gainNode.gain.value = vol * boost;
-  } else {
-    audio.volume = vol;
-  }
+  audio.volume = parseFloat(volumeEl.value);
 });
 
 boostEl.addEventListener('input', () => {
   const val = parseFloat(boostEl.value);
   boostValEl.textContent = val.toFixed(1) + 'x';
-  if (gainNode) {
-    const vol = parseFloat(volumeEl.value) || 1;
-    gainNode.gain.value = vol * val;
-  }
+  // Sem Web Audio API, o boost é limitado a 1.0 (volume máximo do elemento)
+  // Para boost real, seria necessário Web Audio API (causa problemas em mobile)
+  const vol = parseFloat(volumeEl.value) || 1;
+  audio.volume = Math.min(1, vol * val);
 });
 
 // ---------- Filtro por gênero ----------
@@ -361,11 +318,7 @@ vignetteGrid.addEventListener('click', (e) => {
   const wasPlaying = isPlaying;
   const prevSrc = audio.src;
   const prevIndex = currentIndex;
-  setupAudioBoost();
-  if (audioBoostReady) {
-    audio.volume = 1;
-  }
-  resumeAudioCtx();
+  audio.volume = parseFloat(volumeEl.value) || 1;
   audio.src = v.src;
   trackTitle.textContent = v.title;
   trackArtist.textContent = 'Vinheta da Rádio';
@@ -429,11 +382,15 @@ const refreshDiag = document.getElementById('refreshDiag');
 function playTestBeep() {
   try {
     const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    // Retoma o contexto (necessário em mobile)
+    if (ctx.state === 'suspended') {
+      ctx.resume();
+    }
     const osc = ctx.createOscillator();
     const gain = ctx.createGain();
     osc.type = 'sine';
     osc.frequency.value = 440; // Lá (A4)
-    gain.gain.value = 0.3;
+    gain.gain.value = 0.5;
     osc.connect(gain);
     gain.connect(ctx.destination);
     osc.start();
@@ -488,7 +445,7 @@ setInterval(updateDiag, 2000);
 // ---------- Init ----------
 // Garante que o áudio não esteja mutado (importante para mobile)
 audio.muted = false;
-audio.volume = 1;
+audio.volume = parseFloat(volumeEl.value) || 1;
 renderPlaylist();
 renderVignettes();
 loadTrack(0);
