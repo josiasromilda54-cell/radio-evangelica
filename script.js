@@ -194,6 +194,10 @@ function loadTrack(index, autoplay = false) {
   renderPlaylist();
 
   if (autoplay) {
+    setupAudioBoost();
+    if (audioBoostReady) {
+      audio.volume = 1;
+    }
     resumeAudioCtx();
     audio.play().then(() => {
       isPlaying = true;
@@ -220,6 +224,14 @@ playBtn.addEventListener('click', () => {
     cover.classList.remove('playing');
     statusText.textContent = 'Pausado';
   } else {
+    // Configura Web Audio API na primeira interação (necessário para mobile)
+    setupAudioBoost();
+    if (audioBoostReady) {
+      audio.volume = 1;
+      const vol = parseFloat(volumeEl.value) || 1;
+      const boost = parseFloat(boostEl.value) || 1;
+      gainNode.gain.value = vol * boost;
+    }
     resumeAudioCtx();
     isPlaying = true;
     updatePlayButton();
@@ -349,6 +361,10 @@ vignetteGrid.addEventListener('click', (e) => {
   const wasPlaying = isPlaying;
   const prevSrc = audio.src;
   const prevIndex = currentIndex;
+  setupAudioBoost();
+  if (audioBoostReady) {
+    audio.volume = 1;
+  }
   resumeAudioCtx();
   audio.src = v.src;
   trackTitle.textContent = v.title;
@@ -470,11 +486,9 @@ refreshDiag.addEventListener('click', updateDiag);
 setInterval(updateDiag, 2000);
 
 // ---------- Init ----------
-// Web Audio API habilitado para boost de volume
-setupAudioBoost();
-if (audioBoostReady) {
-  audio.volume = 1;
-}
+// Garante que o áudio não esteja mutado (importante para mobile)
+audio.muted = false;
+audio.volume = 1;
 renderPlaylist();
 renderVignettes();
 loadTrack(0);
