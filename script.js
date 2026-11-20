@@ -7,6 +7,28 @@
 // genre: sertanejo | mpb | classico | orquestrado | adoracao | vinheta
 const LIBRARY = [
 
+  // === NIGERIAN GOSPEL (Archive.org) ===
+  { title: 'Excess Love', artist: 'Mercy Chinwo', genre: 'adoracao', src: 'https://archive.org/download/5HoursWorshipWithTheHolySpiritNigerianGospelMusic1/Excess%20Love%20-%20Mercy%20Chinwo%20%28Official%20Video%29.mp3', dur: '4:06' },
+  { title: 'Miracle Rain', artist: 'Frank Edwards', genre: 'adoracao', src: 'https://archive.org/download/5HoursWorshipWithTheHolySpiritNigerianGospelMusic1/Frank%20Edwards%20-%20Miracle%20Rain.mp3', dur: '3:30' },
+  { title: 'Aka Jehovah', artist: 'Gabriel Eziashi', genre: 'adoracao', src: 'https://archive.org/download/5HoursWorshipWithTheHolySpiritNigerianGospelMusic1/Gabriel%20Eziashi%20-%20Aka%20Jehovah.mp3', dur: '2:30' },
+  { title: 'God Is Awesome', artist: 'David G', genre: 'adoracao', src: 'https://archive.org/download/5HoursWorshipWithTheHolySpiritNigerianGospelMusic1/David%20G%20-%20God%20Is%20Awesome.mp3', dur: '3:30' },
+  { title: 'My Trust Is In You', artist: 'David G', genre: 'adoracao', src: 'https://archive.org/download/5HoursWorshipWithTheHolySpiritNigerianGospelMusic1/David%20G%20-%20My%20Trust%20Is%20In%20You.mp3', dur: '2:24' },
+  { title: 'Yahweh', artist: 'David G', genre: 'adoracao', src: 'https://archive.org/download/5HoursWorshipWithTheHolySpiritNigerianGospelMusic1/David%20G%20-%20Yahweh%20-%20Nigerian%20Gospel%20Music.mp3', dur: '2:54' },
+  { title: 'Victory', artist: 'Eben', genre: 'adoracao', src: 'https://archive.org/download/5HoursWorshipWithTheHolySpiritNigerianGospelMusic1/Eben%20-%20Victory%20%5BOfficial%20Video%5D.mp3', dur: '2:42' },
+  { title: 'Cheta', artist: 'Ada', genre: 'adoracao', src: 'https://archive.org/download/5HoursWorshipWithTheHolySpiritNigerianGospelMusic1/Ada%20-%20Cheta%20%20%20The%20Official%20Video.mp3', dur: '3:06' },
+  { title: 'Jesus (You Are Able)', artist: 'ADA', genre: 'adoracao', src: 'https://archive.org/download/5HoursWorshipWithTheHolySpiritNigerianGospelMusic1/ADA%20-%20JESUS%20%28%20You%20Are%20Able%29%20%20%20Official%20Video.mp3', dur: '3:06' },
+  { title: 'Only You Jesus', artist: 'ADA', genre: 'adoracao', src: 'https://archive.org/download/5HoursWorshipWithTheHolySpiritNigerianGospelMusic1/ADA%20-%20ONLY%20YOU%20JESUS%20%20%20The%20Official%20Video.mp3', dur: '3:06' },
+  { title: 'Abasi Amanamu', artist: 'Evang Paul Nwokocha', genre: 'adoracao', src: 'https://archive.org/download/5HoursWorshipWithTheHolySpiritNigerianGospelMusic1/Evang%20Paul%20Nwokocha%20-%20Abasi%20Amanamu.mp3', dur: '3:48' },
+  { title: 'Ancient Of Days', artist: 'Evang Paul Nwokocha', genre: 'adoracao', src: 'https://archive.org/download/5HoursWorshipWithTheHolySpiritNigerianGospelMusic1/Evang%20Paul%20Nwokocha%20-%20Ancient%20Of%20Days.mp3', dur: '2:42' },
+  { title: 'Ndi Nmuo Ozi', artist: 'Evang Paul Nwokocha', genre: 'adoracao', src: 'https://archive.org/download/5HoursWorshipWithTheHolySpiritNigerianGospelMusic1/Evang%20Paul%20Nwokocha%20-%20Ndi%20Nmuo%20Ozi.mp3', dur: '2:06' },
+  { title: 'Mezie Ndu Gi', artist: 'Evang John Okah', genre: 'adoracao', src: 'https://archive.org/download/5HoursWorshipWithTheHolySpiritNigerianGospelMusic1/Evang%20John%20Okah%20-%20Mezie%20Ndu%20Gi.mp3', dur: '3:24' },
+  { title: 'Alanu Mi (My Merciful God)', artist: 'Evang Christiana Akinbanjo', genre: 'adoracao', src: 'https://archive.org/download/5HoursWorshipWithTheHolySpiritNigerianGospelMusic1/Evang%20Christiana%20Akinbanjo%20-%20Alanu%20Mi%20%28My%20Merciful%20God%29.mp3', dur: '3:24' },
+  { title: 'Temidayo', artist: 'Evang. Ajayi Aduke', genre: 'adoracao', src: 'https://archive.org/download/5HoursWorshipWithTheHolySpiritNigerianGospelMusic1/Evang.%20Ajayi%20Aduke%20-%20Temidayo.mp3', dur: '6:00' },
+  { title: 'Mo Ne Yo (Well Done)', artist: 'Diana Hamilton', genre: 'adoracao', src: 'https://archive.org/download/5HoursWorshipWithTheHolySpiritNigerianGospelMusic1/Diana%20Hamilton%20MO%20NE%20YO%20%28%20Well%20Done%29.mp3', dur: '3:06' },
+  { title: 'Consuming Fire', artist: 'Jimmy D Psalmist', genre: 'adoracao', src: 'https://archive.org/download/5HoursWorshipWithTheHolySpiritNigerianGospelMusic1/Consuming%20Fire%20-%20Jimmy%20D%20psalmist.%20Live.mp3', dur: '2:24' },
+  { title: 'Excess Love (Oficial)', artist: 'Mercy Chinwo', genre: 'adoracao', src: 'https://archive.org/download/5HoursWorshipWithTheHolySpiritNigerianGospelMusic1/Excess%20Love%20-%20Mercy%20Chinwo%20%28Official%20Video%29.mp3', dur: '4:06' },
+  { title: 'Miracle Rain (oficial)', artist: 'Frank Edwards', genre: 'adoracao', src: 'https://archive.org/download/5HoursWorshipWithTheHolySpiritNigerianGospelMusic1/Frank%20Edwards%20-%20Miracle%20Rain.mp3', dur: '3:30' },
+  
   // === MICHAEL W. SMITH - A New Hallelujah (Deluxe Edition) ===
   { title: 'Prepare Ye The Way', artist: 'Michael W. Smith', genre: 'adoracao', src: 'https://archive.org/download/ANewHallelujahdeluxeEdition/disc101-PrepareYeTheWaydigitalEdit.mp3', dur: '4:00' },
   { title: 'A New Hallelujah', artist: 'Michael W. Smith', genre: 'adoracao', src: 'https://archive.org/download/ANewHallelujahdeluxeEdition/disc102-ANewHallelujahdigitalEditfeaturingTheAfricanChildrensChoir.mp3', dur: '4:00' },
