@@ -8,6 +8,7 @@
 const LIBRARY = [
   // === LOUVORES CANTADOS (músicas reais) ===
   { title: 'Amazing Grace (Worshipped)', artist: 'Abang Jedidiah', genre: 'adoracao', src: 'https://archive.org/download/amazing-grace-worshipped_202111/Amazing%20Grace%20-%20Worshipped.mp3', dur: '5:15' },
+  { title: 'You Are Life', artist: 'Hillsong Worship (cover)', genre: 'adoracao', src: 'https://archive.org/download/youarelifehillsongworship/You%20Are%20Life%20-%20Hillsong%20Worship.mp3', dur: '4:30' },
   
   // Sertanejo Gospel (Hinos públicos - LibriVox/Archive.org)
   { title: 'He rose again the third day', artist: 'Hino Clássico (LibriVox)', genre: 'sertanejo', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_05_various_128kb.mp3', dur: '2:00' },
