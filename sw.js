@@ -1,5 +1,5 @@
 // Service Worker para Rádio Vida Nova (PWA)
-const CACHE_NAME = 'radio-vida-nova-v1';
+const CACHE_NAME = 'radio-vida-nova-v2';
 const urlsToCache = [
   '/radio-evangelica/',
   '/radio-evangelica/index.html',
