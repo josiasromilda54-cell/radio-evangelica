@@ -94,7 +94,7 @@ html, body {
   gap: 18px;
 }
 
-.card, .player-card, .status-card, .playlist-card, .schedule-card, .prayer-card, .filter-card, .vignette-card {
+.card, .player-card, .status-card, .playlist-card, .schedule-card, .prayer-card, .filter-card, .vignette-card, .drop-zone-card {
   background: var(--card);
   border: 1px solid var(--card-border);
   border-radius: var(--radius);
@@ -538,6 +538,48 @@ html, body {
   flex-shrink: 0;
 }
 .close-banner:hover { color: var(--text); }
+
+/* Seletor de arquivos */
+.file-picker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 140px;
+}
+.file-btn {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #1a1200;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 13px;
+  transition: transform 0.15s;
+  white-space: nowrap;
+}
+.file-btn:hover { transform: translateY(-1px); }
+.file-count {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* Área de drag & drop */
+.drop-zone {
+  border: 2px dashed rgba(245,197,66,0.3);
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.drop-zone:hover, .drop-zone.drag-over {
+  border-color: var(--accent);
+  background: rgba(245,197,66,0.05);
+  color: var(--text);
+}
 
 /* Teste de som */
 .test-sound {

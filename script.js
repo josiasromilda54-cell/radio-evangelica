@@ -446,6 +446,84 @@ function updateDiag() {
 refreshDiag.addEventListener('click', updateDiag);
 setInterval(updateDiag, 2000);
 
+// ---------- Seletor de arquivos MP3 (local) ----------
+const fileInput = document.getElementById('fileInput');
+const fileCount = document.getElementById('fileCount');
+const dropZone = document.getElementById('dropZone');
+
+// Contador de arquivos locais adicionados
+let localFileCount = 0;
+
+function addLocalFiles(files) {
+  let added = 0;
+  Array.from(files).forEach(file => {
+    if (!file.type.startsWith('audio/') && !file.name.toLowerCase().endsWith('.mp3')) return;
+    
+    const url = URL.createObjectURL(file);
+    const name = file.name.replace(/\.[^/.]+$/, ''); // Remove extensão
+    
+    LIBRARY.push({
+      title: name,
+      artist: 'Arquivo local',
+      genre: 'adoracao',
+      src: url,
+      dur: '--:--',
+      isLocal: true,
+    });
+    added++;
+  });
+  
+  if (added > 0) {
+    localFileCount += added;
+    if (fileCount) {
+      fileCount.textContent = `${localFileCount} arquivo(s) local(is)`;
+    }
+    // Recarrega a playlist mantendo o filtro atual
+    if (currentFilter === 'all') {
+      currentList = [...LIBRARY];
+    } else {
+      currentList = LIBRARY.filter(t => t.genre === currentFilter);
+    }
+    renderPlaylist();
+    statusText.textContent = `${added} música(s) adicionada(s) do computador!`;
+  }
+}
+
+if (fileInput) {
+  fileInput.addEventListener('change', (e) => {
+    addLocalFiles(e.target.files);
+    fileInput.value = ''; // Reset para permitir selecionar os mesmos arquivos novamente
+  });
+}
+
+// Drag & Drop
+if (dropZone) {
+  dropZone.addEventListener('click', () => {
+    if (fileInput) fileInput.click();
+  });
+  
+  dropZone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    dropZone.classList.add('drag-over');
+  });
+  
+  dropZone.addEventListener('dragleave', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    dropZone.classList.remove('drag-over');
+  });
+  
+  dropZone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    dropZone.classList.remove('drag-over');
+    if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+      addLocalFiles(e.dataTransfer.files);
+    }
+  });
+}
+
 // ---------- Init ----------
 // Garante que o áudio não esteja mutado (importante para mobile)
 audio.muted = false;
