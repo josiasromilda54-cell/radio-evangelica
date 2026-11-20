@@ -6,6 +6,9 @@
 // ---------- Biblioteca de louvores ----------
 // genre: sertanejo | mpb | classico | orquestrado | adoracao | vinheta
 const LIBRARY = [
+  // === LOUVORES CANTADOS (músicas reais) ===
+  { title: 'Amazing Grace (Worshipped)', artist: 'Abang Jedidiah', genre: 'adoracao', src: 'https://archive.org/download/amazing-grace-worshipped_202111/Amazing%20Grace%20-%20Worshipped.mp3', dur: '5:15' },
+  
   // Sertanejo Gospel (Hinos públicos - LibriVox/Archive.org)
   { title: 'He rose again the third day', artist: 'Hino Clássico (LibriVox)', genre: 'sertanejo', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_05_various_128kb.mp3', dur: '2:00' },
   { title: 'Now is Christ risen from the Dead', artist: 'Hino Clássico (LibriVox)', genre: 'sertanejo', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_04_various_128kb.mp3', dur: '2:15' },
