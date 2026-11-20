@@ -90,65 +90,20 @@ const LIBRARY = [
   { title: 'Amazing Grace (Worshipped)', artist: 'Abang Jedidiah', genre: 'adoracao', src: 'https://archive.org/download/amazing-grace-worshipped_202111/Amazing%20Grace%20-%20Worshipped.mp3', dur: '5:15' },
   { title: 'You Are Life', artist: 'Hillsong Worship (cover)', genre: 'adoracao', src: 'https://archive.org/download/youarelifehillsongworship/You%20Are%20Life%20-%20Hillsong%20Worship.mp3', dur: '4:30' },
   
-  // Sertanejo Gospel (Hinos públicos - LibriVox/Archive.org)
-  { title: 'He rose again the third day', artist: 'Hino Clássico (LibriVox)', genre: 'sertanejo', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_05_various_128kb.mp3', dur: '2:00' },
-  { title: 'Now is Christ risen from the Dead', artist: 'Hino Clássico (LibriVox)', genre: 'sertanejo', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_04_various_128kb.mp3', dur: '2:15' },
-  { title: 'Sing ye to the Lord', artist: 'Hino Clássico (LibriVox)', genre: 'sertanejo', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_12_various_128kb.mp3', dur: '2:20' },
-  { title: 'He will swallow up death in victory', artist: 'Hino Clássico (LibriVox)', genre: 'sertanejo', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_15_various_128kb.mp3', dur: '2:05' },
-  { title: 'The Lord hath done great things for us', artist: 'Hino Clássico (LibriVox)', genre: 'sertanejo', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_16_various_128kb.mp3', dur: '2:10' },
-  { title: 'Abide with us', artist: 'Hino Clássico (LibriVox)', genre: 'sertanejo', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_21_various_128kb.mp3', dur: '2:00' },
-  { title: 'Lo, I am with you alway', artist: 'Hino Clássico (LibriVox)', genre: 'sertanejo', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_24_various_128kb.mp3', dur: '1:25' },
-  { title: 'To him be glory both now and forever', artist: 'Hino Clássico (LibriVox)', genre: 'sertanejo', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_25_various_128kb.mp3', dur: '1:30' },
 
-  // MPB Gospel (Hinos públicos - LibriVox/Archive.org)
-  { title: 'Salvation to our God', artist: 'Hino Clássico (LibriVox)', genre: 'mpb', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_03_various_128kb.mp3', dur: '1:20' },
-  { title: 'I am the Resurrection and the Life', artist: 'Hino Clássico (LibriVox)', genre: 'mpb', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_07_various_128kb.mp3', dur: '1:40' },
-  { title: 'He appeared first to Mary Magdalene', artist: 'Hino Clássico (LibriVox)', genre: 'mpb', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_26_various_128kb.mp3', dur: '1:10' },
-  { title: 'I am he that liveth and was dead', artist: 'Hino Clássico (LibriVox)', genre: 'mpb', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_27_various_128kb.mp3', dur: '1:15' },
-  { title: 'Peace be unto you', artist: 'Hino Clássico (LibriVox)', genre: 'mpb', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_29_various_128kb.mp3', dur: '2:50' },
-  { title: 'Death is swallowed up in victory', artist: 'Hino Clássico (LibriVox)', genre: 'mpb', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_30_various_128kb.mp3', dur: '2:30' },
-  { title: 'Christ must needs have suffered', artist: 'Hino Clássico (LibriVox)', genre: 'mpb', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_35_various_128kb.mp3', dur: '1:55' },
-  { title: 'Why weepest thou?', artist: 'Hino Clássico (LibriVox)', genre: 'mpb', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_36_various_128kb.mp3', dur: '2:40' },
 
-  // Clássicos (Hinos públicos - LibriVox/Archive.org)
-  { title: 'The Lord is risen indeed', artist: 'Hino Clássico (LibriVox)', genre: 'classico', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_08_various_128kb.mp3', dur: '1:30' },
-  { title: 'He is risen, he is not here', artist: 'Hino Clássico (LibriVox)', genre: 'classico', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_13_various_128kb.mp3', dur: '1:15' },
-  { title: 'King of kings, and Lord of lords', artist: 'Hino Clássico (LibriVox)', genre: 'classico', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_14_various_128kb.mp3', dur: '1:50' },
-  { title: 'I know that my Redeemer liveth', artist: 'Hino Clássico (LibriVox)', genre: 'classico', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_34_various_128kb.mp3', dur: '1:05' },
-  { title: 'O death, where is thy sting?', artist: 'Hino Clássico (LibriVox)', genre: 'classico', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_45_various_128kb.mp3', dur: '1:15' },
-  { title: 'Alleluja, for the Lord God Omnipotent reigneth', artist: 'Hino Clássico (LibriVox)', genre: 'classico', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_54_various_128kb.mp3', dur: '1:20' },
-  { title: 'Let every thing that hath breath praise the Lord', artist: 'Hino Clássico (LibriVox)', genre: 'classico', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_55_various_128kb.mp3', dur: '1:30' },
-  { title: 'This is the day which the Lord hath made', artist: 'Hino Clássico (LibriVox)', genre: 'classico', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_59_various_128kb.mp3', dur: '1:40' },
 
-  // Orquestrado / Instrumental (Hinos públicos - LibriVox/Archive.org)
-  { title: 'Four Hymns - Part 1', artist: 'LibriVox (Domínio Público)', genre: 'orquestrado', src: 'https://archive.org/download/four_hymns_2012_librivox/fourhymns_01_spenser.mp3', dur: '17:48' },
-  { title: 'Four Hymns - Part 2', artist: 'LibriVox (Domínio Público)', genre: 'orquestrado', src: 'https://archive.org/download/four_hymns_2012_librivox/fourhymns_02_spenser.mp3', dur: '15:00' },
-  { title: 'Four Hymns - Part 3', artist: 'LibriVox (Domínio Público)', genre: 'orquestrado', src: 'https://archive.org/download/four_hymns_2012_librivox/fourhymns_03_spenser.mp3', dur: '16:24' },
-  { title: 'Four Hymns - Part 4', artist: 'LibriVox (Domínio Público)', genre: 'orquestrado', src: 'https://archive.org/download/four_hymns_2012_librivox/fourhymns_04_spenser.mp3', dur: '14:18' },
-  { title: 'The Lord is risen indeed', artist: 'Hino Clássico (LibriVox)', genre: 'orquestrado', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_08_various_128kb.mp3', dur: '1:30' },
-  { title: 'He is risen, he is not here', artist: 'Hino Clássico (LibriVox)', genre: 'orquestrado', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_13_various_128kb.mp3', dur: '1:15' },
-  { title: 'King of kings, and Lord of lords', artist: 'Hino Clássico (LibriVox)', genre: 'orquestrado', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_14_various_128kb.mp3', dur: '1:50' },
-  { title: 'Alleluja, for the Lord God Omnipotent reigneth', artist: 'Hino Clássico (LibriVox)', genre: 'orquestrado', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_54_various_128kb.mp3', dur: '1:20' },
 
-  // Adoração (Hinos públicos - LibriVox/Archive.org)
-  { title: 'He is not here, but is risen', artist: 'Hino Clássico (LibriVox)', genre: 'adoracao', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_44_various_128kb.mp3', dur: '1:45' },
-  { title: 'O death, where is thy sting?', artist: 'Hino Clássico (LibriVox)', genre: 'adoracao', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_45_various_128kb.mp3', dur: '1:15' },
-  { title: 'O clap your hands, all ye people', artist: 'Hino Clássico (LibriVox)', genre: 'adoracao', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_46_various_128kb.mp3', dur: '1:20' },
-  { title: 'It is Christ that died', artist: 'Hino Clássico (LibriVox)', genre: 'adoracao', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_48_various_128kb.mp3', dur: '1:15' },
-  { title: 'Jesus Christ, the Lord of glory', artist: 'Hino Clássico (LibriVox)', genre: 'adoracao', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_49_various_128kb.mp3', dur: '1:30' },
-  { title: 'The fruit of the Spirit', artist: 'Hino Clássico (LibriVox)', genre: 'adoracao', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_50_various_128kb.mp3', dur: '1:45' },
-  { title: 'Christ being raised from the dead', artist: 'Hino Clássico (LibriVox)', genre: 'adoracao', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_52_various_128kb.mp3', dur: '1:10' },
-  { title: 'Why seek ye the living among the dead?', artist: 'Hino Clássico (LibriVox)', genre: 'adoracao', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_53_various_128kb.mp3', dur: '1:25' },
 ];
 
 // ---------- Vinhetas da rádio ----------
 const VIGNETTES = [
-  { title: 'Vinheta de Abertura', desc: 'Identificação da rádio', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_08_various_128kb.mp3', dur: '1:30' },
-  { title: 'Vinheta Institucional', desc: 'Quem somos', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_13_various_128kb.mp3', dur: '1:15' },
-  { title: 'Vinheta de Programa', desc: 'Anúncio de atração', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_23_various_128kb.mp3', dur: '1:05' },
-  { title: 'Vinheta de Encerramento', desc: 'Despedida', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_28_various_128kb.mp3', dur: '1:15' },
-  { title: 'Chamada para Pedidos', desc: 'Peça sua música', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_33_various_128kb.mp3', dur: '0:50' },
-  { title: 'Vinhetão (sweep)', desc: 'Transição entre blocos', src: 'https://archive.org/download/easter_hymns_1706_librivox/easterhymns_38_various_128kb.mp3', dur: '1:10' },
+  { title: 'Vinheta de Abertura', desc: 'Identificação da rádio', src: 'https://archive.org/download/09-oh-happy-day/01%20Amazing%20Grace.mp3', dur: '0:15' },
+  { title: 'Vinheta Institucional', desc: 'Quem somos', src: 'https://archive.org/download/09-oh-happy-day/02%20Whispering%20Hope.mp3', dur: '0:20' },
+  { title: 'Vinheta de Programa', desc: 'Anúncio de atração', src: 'https://archive.org/download/09-oh-happy-day/03%20Wings%20of%20a%20Dove.mp3', dur: '0:12' },
+  { title: 'Vinheta de Encerramento', desc: 'Despedida', src: 'https://archive.org/download/09-oh-happy-day/04%20One%20Day%20at%20a%20Time.mp3', dur: '0:18' },
+  { title: 'Chamada para Pedidos', desc: 'Peça sua música', src: 'https://archive.org/download/09-oh-happy-day/05%20What%20a%20Friend%20We%20Have%20in%20Jesus.mp3', dur: '0:22' },
+  { title: 'Vinhetão (sweep)', desc: 'Transição entre blocos', src: 'https://archive.org/download/09-oh-happy-day/06%20In%20the%20Garden.mp3', dur: '0:08' },
 ];
 
 // ---------- Elementos ----------
