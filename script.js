@@ -6,6 +6,25 @@
 // ---------- Biblioteca de louvores ----------
 // genre: sertanejo | mpb | classico | orquestrado | adoracao | vinheta
 const LIBRARY = [
+
+  // === MICHAEL W. SMITH - A New Hallelujah (Deluxe Edition) ===
+  { title: 'Prepare Ye The Way', artist: 'Michael W. Smith', genre: 'adoracao', src: 'https://archive.org/download/ANewHallelujahdeluxeEdition/disc101-PrepareYeTheWaydigitalEdit.mp3', dur: '4:00' },
+  { title: 'A New Hallelujah', artist: 'Michael W. Smith', genre: 'adoracao', src: 'https://archive.org/download/ANewHallelujahdeluxeEdition/disc102-ANewHallelujahdigitalEditfeaturingTheAfricanChildrensChoir.mp3', dur: '4:00' },
+  { title: 'When I Think Of You', artist: 'Michael W. Smith', genre: 'adoracao', src: 'https://archive.org/download/ANewHallelujahdeluxeEdition/disc103-WhenIThinkOfYoudigitalEditfeaturingTheAfricanChildrensChoir.mp3', dur: '3:00' },
+  { title: 'Mighty To Save', artist: 'Michael W. Smith', genre: 'adoracao', src: 'https://archive.org/download/ANewHallelujahdeluxeEdition/disc104-MightyToSavedigitalEdit.mp3', dur: '6:00' },
+  { title: 'Shout Unto God', artist: 'Michael W. Smith', genre: 'adoracao', src: 'https://archive.org/download/ANewHallelujahdeluxeEdition/disc105-ShoutUntoGoddigitalEdit.mp3', dur: '2:24' },
+  { title: 'Amazing Grace (My Chains Are Gone)', artist: 'Michael W. Smith', genre: 'adoracao', src: 'https://archive.org/download/ANewHallelujahdeluxeEdition/disc106-AmazingGracemyChainsAreGonedigitalEdit.mp3', dur: '4:24' },
+  { title: 'Deep In Love With You', artist: 'Michael W. Smith', genre: 'adoracao', src: 'https://archive.org/download/ANewHallelujahdeluxeEdition/disc107-DeepInLoveWithYou.mp3', dur: '4:36' },
+  { title: 'Healing Rain / Let It Rain', artist: 'Michael W. Smith', genre: 'adoracao', src: 'https://archive.org/download/ANewHallelujahdeluxeEdition/disc108-HealingRain_LetItRain.mp3', dur: '2:24' },
+  { title: 'Majesty', artist: 'Michael W. Smith', genre: 'adoracao', src: 'https://archive.org/download/ANewHallelujahdeluxeEdition/disc109-Majesty.mp3', dur: '3:00' },
+  { title: 'I Surrender All', artist: 'Michael W. Smith', genre: 'adoracao', src: 'https://archive.org/download/ANewHallelujahdeluxeEdition/disc110-ISurrenderAllwithSpecialGuestCoaloZamorano.mp3', dur: '2:42' },
+  { title: 'Grace', artist: 'Michael W. Smith', genre: 'adoracao', src: 'https://archive.org/download/ANewHallelujahdeluxeEdition/disc111-Grace.mp3', dur: '3:06' },
+  { title: 'Help Is On The Way', artist: 'Michael W. Smith', genre: 'adoracao', src: 'https://archive.org/download/ANewHallelujahdeluxeEdition/disc113-HelpIsOnTheWaywithSpecialGuestIsraelHoughton.mp3', dur: '3:42' },
+  { title: 'The River Is Rising', artist: 'Michael W. Smith', genre: 'adoracao', src: 'https://archive.org/download/ANewHallelujahdeluxeEdition/disc114-TheRiverIsRising.mp3', dur: '4:00' },
+  { title: 'Oh Draw Me Lord (Draw Me Near)', artist: 'Michael W. Smith', genre: 'adoracao', src: 'https://archive.org/download/ANewHallelujahdeluxeEdition/disc201-OhDrawMeLorddrawMeNear.mp3', dur: '1:54' },
+  { title: 'Love In His Right Hand', artist: 'Michael W. Smith', genre: 'adoracao', src: 'https://archive.org/download/ANewHallelujahdeluxeEdition/disc202-LoveInHisRightHand.mp3', dur: '2:48' },
+  { title: 'A New Hallelujah (Radio Version)', artist: 'Michael W. Smith', genre: 'adoracao', src: 'https://archive.org/download/ANewHallelujahdeluxeEdition/disc203-ANewHallelujahradioVersion.mp3', dur: '3:06' },
+  { title: 'A New Hallelujah (Live Radio Edit)', artist: 'Michael W. Smith', genre: 'adoracao', src: 'https://archive.org/download/ANewHallelujahdeluxeEdition/disc204-ANewHallelujahliveRadioEdit.mp3', dur: '3:18' },
   
   // === GALILEU (Fernandinho) ===
   { title: 'Adestra', artist: 'Fernandinho', genre: 'adoracao', src: 'https://archive.org/download/galileu/Adestra.mp3', dur: '3:06' },
