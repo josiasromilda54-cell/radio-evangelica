@@ -620,16 +620,9 @@ loadPrayers();
 updateDiag();
 statusText.textContent = `Pronto! ${LIBRARY.length} louvores + ${VIGNETTES.length} vinhetas. Clique em ▶ para ouvir.`;
 
-// ---------- PWA: Service Worker ----------
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('sw.js').then((registration) => {
-      console.log('Service Worker registrado:', registration.scope);
-    }).catch((error) => {
-      console.log('Service Worker falhou:', error);
-    });
-  });
-}
+// ---------- PWA: Service Worker (desabilitado - causava cache de versão antiga) ----------
+// O Service Worker foi desabilitado para evitar problemas de cache.
+// A rádio funciona normalmente sem ele. O manifest.json ainda permite instalação como app.
 
 // ---------- PWA: Install Prompt ----------
 let deferredPrompt = null;
