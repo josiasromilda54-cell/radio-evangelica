@@ -6,7 +6,21 @@
 // ---------- Biblioteca de louvores ----------
 // genre: sertanejo | mpb | classico | orquestrado | adoracao | vinheta
 const LIBRARY = [
-  // === LOUVORES CANTADOS (músicas reais) ===
+  // === LOUVORES CANTADOS (músicas reais - Country Gospel [Madacy]) ===
+  { title: 'Amazing Grace', artist: 'Country Gospel', genre: 'classico', src: 'https://archive.org/download/09-oh-happy-day/01%20Amazing%20Grace.mp3', dur: '2:54' },
+  { title: 'Whispering Hope', artist: 'Country Gospel', genre: 'classico', src: 'https://archive.org/download/09-oh-happy-day/02%20Whispering%20Hope.mp3', dur: '4:54' },
+  { title: 'Wings of a Dove', artist: 'Country Gospel', genre: 'classico', src: 'https://archive.org/download/09-oh-happy-day/03%20Wings%20of%20a%20Dove.mp3', dur: '3:20' },
+  { title: 'One Day at a Time', artist: 'Country Gospel', genre: 'adoracao', src: 'https://archive.org/download/09-oh-happy-day/04%20One%20Day%20at%20a%20Time.mp3', dur: '4:18' },
+  { title: 'What a Friend We Have in Jesus', artist: 'Country Gospel', genre: 'adoracao', src: 'https://archive.org/download/09-oh-happy-day/05%20What%20a%20Friend%20We%20Have%20in%20Jesus.mp3', dur: '4:06' },
+  { title: 'In the Garden', artist: 'Country Gospel', genre: 'adoracao', src: 'https://archive.org/download/09-oh-happy-day/06%20In%20the%20Garden.mp3', dur: '3:48' },
+  { title: 'Just a Closer Walk With Thee', artist: 'Country Gospel', genre: 'adoracao', src: 'https://archive.org/download/09-oh-happy-day/07%20Just%20a%20Closer%20Walk%20With%20Thee.mp3', dur: '3:42' },
+  { title: "You'll Never Walk Alone", artist: 'Country Gospel', genre: 'adoracao', src: 'https://archive.org/download/09-oh-happy-day/08%20You%27ll%20Never%20Walk%20Alone.mp3', dur: '3:42' },
+  { title: 'Oh Happy Day', artist: 'Country Gospel', genre: 'adoracao', src: 'https://archive.org/download/09-oh-happy-day/09%20Oh%20Happy%20Day.mp3', dur: '5:18' },
+  { title: "Life's Railway to Heaven", artist: 'Country Gospel', genre: 'sertanejo', src: 'https://archive.org/download/09-oh-happy-day/10%20Life%27s%20Railway%20to%20Heaven.mp3', dur: '4:06' },
+  { title: 'Why Me Lord?', artist: 'Country Gospel', genre: 'sertanejo', src: 'https://archive.org/download/09-oh-happy-day/11%20Why%20Me%20Lord-.mp3', dur: '4:48' },
+  { title: 'Will the Circle Be Unbroken', artist: 'Country Gospel', genre: 'sertanejo', src: 'https://archive.org/download/09-oh-happy-day/12%20Will%20the%20Circle%20Be%20Unbroken.mp3', dur: '3:42' },
+  
+  // === OUTROS LOUVORES CANTADOS ===
   { title: 'Amazing Grace (Worshipped)', artist: 'Abang Jedidiah', genre: 'adoracao', src: 'https://archive.org/download/amazing-grace-worshipped_202111/Amazing%20Grace%20-%20Worshipped.mp3', dur: '5:15' },
   { title: 'You Are Life', artist: 'Hillsong Worship (cover)', genre: 'adoracao', src: 'https://archive.org/download/youarelifehillsongworship/You%20Are%20Life%20-%20Hillsong%20Worship.mp3', dur: '4:30' },
   
